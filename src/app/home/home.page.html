@@ -1,16 +1,15 @@
 <ion-header>
   <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-menu-button></ion-menu-button>
-    </ion-buttons>
-    <ion-title>
-      Home
-    </ion-title>
+    <ion-button shape="round" slot="start" (click)="mostrar()">
+      <ion-icon name="add-circle"></ion-icon>
+    </ion-button>
+    <ion-title>Tarefas</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>If you get lost, the
-    <a target="_blank" rel="noopener" href="https://ionicframework.com/docs">docs</a> will be your guide.</p>
+  <h1>{{info}}</h1>
+  <ion-item *ngFor="let item of tarefas">
+    <ion-button shape="round" color="primary" (click)="teste(item.id)" >{{item.data}} {{item.atividade}}</ion-button>
+  </ion-item>
 </ion-content>

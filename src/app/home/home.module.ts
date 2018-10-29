@@ -5,6 +5,7 @@ import { IonicModule } from '@ionic/angular';
 import { RouterModule } from '@angular/router';
 
 import { HomePage } from './home.page';
+import { ModalInsercaoTarefaPage } from '../modal-insercao-tarefa/modal-insercao-tarefa.page';
 
 @NgModule({
   imports: [
@@ -18,6 +19,7 @@ import { HomePage } from './home.page';
       }
     ])
   ],
-  declarations: [HomePage]
+  declarations: [HomePage, ModalInsercaoTarefaPage],
+  entryComponents: [ModalInsercaoTarefaPage]
 })
 export class HomePageModule {}

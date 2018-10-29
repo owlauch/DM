@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>{{titulo}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content padding>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Tarefa</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <div>
+        <ion-item>
+          <ion-label>Date</ion-label>
+          <ion-datetime [(ngModel)]="tarefa.data" display-format="MM/DD/YYYY">{{tarefa.data}}</ion-datetime>
+        </ion-item>
+        <ion-item>
+          <ion-label>Atividade</ion-label>
+          <ion-select [(ngModel)]="tarefa.atividade" value="{{tarefa.atividade}}" ok-text="OK" cancel-text="Cancelar">
+            <ion-select-option value="Prova">Prova</ion-select-option>
+            <ion-select-option value="Trabalho">Trabalho</ion-select-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-input [(ngModel)]="tarefa.descricao" required type="text" placeholder="descricao">{{tarefa.descricao}}</ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input [(ngModel)]="tarefa.conteudo" required type="text" placeholder="conteudo">{{tarefa.conteudo}}</ion-input>
+        </ion-item>
+        <ion-radio-group>
+          <ion-item>
+            <ion-label>Concluido</ion-label>
+            <ion-radio [(ngModel)]="tarefa.status" value="{{tarefa.status}}" checked="{{tarefa.status}}" slot="end"></ion-radio>
+          </ion-item>
+        </ion-radio-group>
+      </div>
+      <div>
+        <ion-button shape="round" color="primary" (click)="salvar()">
+          <ion-icon name="save"></ion-icon>
+        </ion-button>
+        <ion-button shape="round" color="danger" (click)="fechar()">
+          <ion-icon name="close"></ion-icon>
+        </ion-button>
+      </div>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

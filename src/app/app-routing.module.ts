@@ -14,6 +14,9 @@ const routes: Routes = [
   {
     path: 'list',
     loadChildren: './list/list.module#ListPageModule'
+  },
+  { path: 'modalInsercaoTarefa',
+    loadChildren: './modal-insercao-tarefa/modal-insercao-tarefa.module#ModalInsercaoTarefaPageModule' 
   }
 ];
 
