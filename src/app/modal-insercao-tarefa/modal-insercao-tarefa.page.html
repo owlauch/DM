@@ -22,15 +22,20 @@
           </ion-select>
         </ion-item>
         <ion-item>
-          <ion-input [(ngModel)]="tarefa.descricao" required type="text" placeholder="descricao">{{tarefa.descricao}}</ion-input>
+          <ion-input [(ngModel)]="tarefa.descricao" required type="text" placeholder="Descricao">{{tarefa.descricao}}</ion-input>
         </ion-item>
         <ion-item>
-          <ion-input [(ngModel)]="tarefa.conteudo" required type="text" placeholder="conteudo">{{tarefa.conteudo}}</ion-input>
+          <ion-input [(ngModel)]="tarefa.conteudo" required type="text" placeholder="Conteudo">{{tarefa.conteudo}}</ion-input>
         </ion-item>
-        <ion-radio-group>
+        <ion-radio-group [(ngModel)]="tarefa.status">
+          <h3>Concluido</h3>
           <ion-item>
-            <ion-label>Concluido</ion-label>
-            <ion-radio [(ngModel)]="tarefa.status" value="{{tarefa.status}}" checked="{{tarefa.status}}" slot="end"></ion-radio>
+            <ion-label>Sim</ion-label>
+            <ion-radio value="true"></ion-radio>
+          </ion-item>
+          <ion-item>
+            <ion-label>Não</ion-label>
+            <ion-radio value="false" checked="true"></ion-radio>
           </ion-item>
         </ion-radio-group>
       </div>
